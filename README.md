@@ -1,4 +1,4 @@
-# Consum Electron
+# Electron Demo
 
 基于 **Electron 33 + Vue 3 + Element Plus + TypeScript** 的桌面应用开发模板 / 案例项目。
 
