@@ -7,6 +7,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: () => import('@/views/HomeView.vue')
+    },
+    {
+      path: '/electron-api',
+      name: 'electron-api',
+      component: () => import('@/views/ElectronApiView.vue')
     }
   ]
 })

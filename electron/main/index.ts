@@ -1,19 +1,17 @@
 import { app, BrowserWindow, shell, ipcMain } from 'electron'
 import { release } from 'node:os'
 import { join } from 'node:path'
+import { registerDemoHandlers } from './demos'
 
-// The built directory structure
+// electron-vite 默认输出目录结构
 //
-// ├─┬ dist-electron
-// │ ├─┬ main
-// │ │ └── index.js    > Electron-Main
-// │ └─┬ preload
-// │   └── index.js    > Preload-Scripts
-// ├─┬ dist
-// │ └── index.html    > Electron-Renderer
+// └── out/
+//     ├── main/index.js      > Electron-Main
+//     ├── preload/index.js   > Preload-Scripts
+//     └── renderer/index.html> Electron-Renderer
 //
 process.env.DIST_ELECTRON = join(__dirname, '..')
-process.env.DIST = join(process.env.DIST_ELECTRON, '../dist')
+process.env.DIST = join(process.env.DIST_ELECTRON, 'renderer')
 process.env.VITE_PUBLIC = process.env.VITE_DEV_SERVER_URL
   ? join(process.env.DIST_ELECTRON, '../public')
   : process.env.DIST
@@ -86,6 +84,9 @@ process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = 'true'
 
 app.whenReady().then(async () => {
   ipcMain.handle('get-app-version', () => app.getVersion())
+
+  // 注册 API 手册交互示例所需的 IPC handlers
+  registerDemoHandlers()
 
   await createWindow()
 
