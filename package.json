@@ -1,0 +1,40 @@
+{
+  "name": "consum-electron",
+  "version": "1.0.0",
+  "description": "Electron + Vue3 + ElementPlus + TypeScript 项目",
+  "main": "./out/main/index.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .js,.ts,.cjs,.mjs,.tsx,.jsx,.vue",
+    "typecheck": "vue-tsc --noEmit && electron-vite typecheck",
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "build:unpack": "npm run build && electron-builder --dir",
+    "build:win": "npm run build && electron-builder --win",
+    "build:mac": "npm run build && electron-builder --mac",
+    "build:linux": "npm run build && electron-builder --linux",
+    "preview": "electron-vite preview",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "element-plus": "^2.8.6",
+    "pinia": "^2.2.6",
+    "vue": "^3.5.12",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "electron": "^33.0.2",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
+    "vue-tsc": "^2.1.10",
+    "sass": "^1.80.6"
+  }
+}
