@@ -63,7 +63,7 @@ child.kill()`
 crashReporter.start({
   uploadToServer: true,
   submitURL: 'https://your-server.com/crash',
-  productName: 'consum-electron',
+  productName: 'electron-demo',
   compress: true
 })`
     },

@@ -1,5 +1,5 @@
 {
-  "name": "consum-electron",
+  "name": "electron-demo",
   "version": "1.0.0",
   "description": "Electron + Vue3 + ElementPlus + TypeScript 项目",
   "main": "./out/main/index.js",

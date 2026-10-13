@@ -50,7 +50,7 @@ npm run build:win  # 打包 Windows 应用
 ## 目录结构
 
 ```
-consum-electron/
+electron-demo/
 ├── electron/
 │   ├── main/
 │   │   ├── index.ts          # 主进程入口：窗口创建 + 各功能模块 IPC handlers
